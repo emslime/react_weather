@@ -1,0 +1,14 @@
+.conditions {
+  opacity: 75%;
+  margin-left: 32px;
+  margin-right: 8px;
+}
+
+li {
+  list-style: none;
+  font-size: 13px;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}

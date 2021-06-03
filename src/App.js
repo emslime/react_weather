@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Search from "./Search";
+import Overview from "./Overview";
+import Temperature from "./Temperature";
+import Conditions from "./Conditions";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <div className="container shadow-lg p-3 mb-5 bg-body rounded">
+        <div className="card grey-border">
+          <div className="card-body">
+            <div className="card gradient-body">
+              <Search />
+              <Overview city="Cincinnati" value="Wednesday 11:11" />
+              <div className="row">
+                <Temperature value={76.6} />
+                <Conditions value="broken clouds" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="coded-by">
+          This is a work in progress,{" "}
+          <a
+            href="https://github.com/emslime/weather-app.git"
+            className="git-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            open-source (vanilla) code here
+          </a>{" "}
+          🤍 Em
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      </div>
     </div>
   );
 }

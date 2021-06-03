@@ -1,0 +1,19 @@
+.weather-temperature {
+  margin-left: 62px;
+}
+
+.weather-temperature strong {
+  font-weight: 400;
+  font-size: 50px;
+  margin-left: -16px;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 12px;
+  top: -28px;
+}
+
+.icon {
+  margin-top: -30px;
+}
