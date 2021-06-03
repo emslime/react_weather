@@ -23,12 +23,12 @@ function App() {
         <p className="coded-by">
           This is a work in progress,{" "}
           <a
-            href="https://github.com/emslime/weather-app.git"
+            href="https://github.com/emslime/react_weather"
             className="git-link"
             target="_blank"
             rel="noreferrer"
           >
-            open-source (vanilla) code here
+            open-source code here
           </a>{" "}
           🤍 Em
         </p>
