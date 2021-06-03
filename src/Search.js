@@ -10,7 +10,7 @@ export default function Search() {
             type="search"
             placeholder="Start here ..."
             className="form-control city-input"
-            autoFocus="on"
+            autoFocus="off"
             autoComplete="off"
           />
         </div>
