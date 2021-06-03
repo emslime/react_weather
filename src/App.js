@@ -15,7 +15,7 @@ function App() {
               <Overview city="Cincinnati" value="Wednesday 11:11" />
               <div className="row">
                 <Temperature value={76.6} />
-                <Conditions />
+                <Conditions value="broken clouds" />
               </div>
             </div>
           </div>
