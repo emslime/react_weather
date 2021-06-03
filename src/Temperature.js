@@ -12,7 +12,13 @@ export default function Temperature(props) {
         />
         <strong>{Math.round(props.value)}</strong>
         <span className="units">
-          <a href="/">°F</a> |<a href="/">°C</a>
+          <a href="/" className="fahrenheit">
+            °F
+          </a>{" "}
+          |
+          <a href="/" className="celsius">
+            °C
+          </a>
         </span>
       </div>
     </div>

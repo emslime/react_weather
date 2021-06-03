@@ -17,3 +17,8 @@
 .icon {
   margin-top: -30px;
 }
+
+.fahrenheit,
+.celsius {
+  text-decoration: none;
+}

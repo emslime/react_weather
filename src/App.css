@@ -44,6 +44,7 @@ body {
 
 .git-link {
   color: #fff;
+  text-decoration: none;
 }
 
 .git-link:hover {

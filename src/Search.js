@@ -21,13 +21,6 @@ export default function Search() {
             className="btn btn-outline-light search-button"
           />
         </div>
-        <div className="col-2">
-          <input
-            type="submit"
-            value="Current Location"
-            className="btn btn-outline-light current-location-button"
-          />
-        </div>
       </div>
     </form>
   );
