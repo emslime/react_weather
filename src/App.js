@@ -4,7 +4,7 @@ import Overview from "./Overview";
 import Temperature from "./Temperature";
 import Conditions from "./Conditions";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container shadow-lg p-3 mb-5 bg-body rounded">
@@ -36,5 +36,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
