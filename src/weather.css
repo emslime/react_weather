@@ -1,0 +1,74 @@
+form {
+  margin-top: 26px;
+}
+
+.search-button {
+  margin-left: 32px;
+}
+
+.city-input {
+  margin-left: 38px;
+  opacity: 0.6;
+}
+
+.city {
+  margin-top: 16px;
+  margin-left: 50px;
+  font-size: 30px;
+}
+
+.date {
+  margin-top: 20px;
+  margin-left: 48px;
+  font-size: 21px;
+}
+
+.weather-temperature {
+  margin-left: 62px;
+}
+
+.weather-temperature strong {
+  font-weight: 400;
+  font-size: 50px;
+  margin-left: -16px;
+}
+
+.weather-temperature .units {
+  position: relative;
+  font-size: 12px;
+  top: -28px;
+}
+
+.icon {
+  margin-top: -30px;
+}
+
+.fahrenheit,
+.celsius {
+  text-decoration: none;
+}
+
+.conditions {
+  opacity: 0.7;
+  margin-left: 32px;
+  margin-right: 8px;
+}
+
+li {
+  list-style: none;
+  font-size: 13px;
+}
+
+li::first-letter {
+  text-transform: capitalize;
+}
+
+.location {
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.current-button {
+  font-size: 10px;
+}

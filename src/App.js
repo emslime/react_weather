@@ -1,9 +1,5 @@
 import "./App.css";
-import Search from "./Search";
-import Overview from "./Overview";
-import Temperature from "./Temperature";
-import Conditions from "./Conditions";
-import Geolocation from "./Geolocation";
+import Weather from "./Weather";
 
 export default function App() {
   return (
@@ -12,14 +8,7 @@ export default function App() {
         <div className="card grey-border">
           <div className="card-body">
             <div className="card gradient-body">
-              <Search />
-
-              <Overview city="Cincinnati" value="Wednesday 11:11" />
-              <div className="row">
-                <Temperature value={76.6} />
-                <Conditions value="broken clouds" />
-              </div>
-              <Geolocation />
+              <Weather />
             </div>
           </div>
         </div>
