@@ -14,7 +14,7 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
-      icon: "https://openweathermap.org/img/wn/10d@2x.png",
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -61,14 +61,6 @@ export default function Weather(props) {
           </div>
         </form>
         <Results data={weatherData} />
-        <div className="location">
-          <p>
-            <button className="btn btn-outline-light current-button">
-              Click here
-            </button>{" "}
-            to see the weather at your current location
-          </p>
-        </div>
       </div>
     );
   } else {
