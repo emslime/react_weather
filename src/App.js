@@ -8,7 +8,7 @@ export default function App() {
         <div className="card grey-border">
           <div className="card-body">
             <div className="card gradient-body">
-              <Weather />
+              <Weather defaultCity="Las Vegas" />
             </div>
           </div>
         </div>
