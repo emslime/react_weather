@@ -11,7 +11,7 @@ export default function Weather(props) {
       city: response.data.name,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
-      icon: "https://openweathermap.org/img/wn/10n@2x.png",
+      icon: "https://openweathermap.org/img/wn/10d@2x.png",
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
@@ -47,9 +47,9 @@ export default function Weather(props) {
               <h1 className="city">{weatherData.city}</h1>
             </div>
             <div className="col-6">
-              <p className="date">
+              <h2 className="date">
                 <FormattedDate date={weatherData.date} />
-              </p>
+              </h2>
             </div>
           </div>
         </div>
@@ -94,7 +94,7 @@ export default function Weather(props) {
     );
   } else {
     const apiKey = "db51b5a53faf37133eab9327ddad8802";
-    let city = "Cincinnati";
+    let city = "Las Vegas";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(handleResponse);
 
