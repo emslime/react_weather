@@ -13,18 +13,18 @@ form {
 
 .city {
   margin-top: 16px;
-  margin-left: 50px;
+  margin-left: 38px;
   font-size: 30px;
 }
 
 .date {
   margin-top: 20px;
-  margin-left: 48px;
-  font-size: 21px;
+  margin-left: 45px;
+  font-size: 19px;
 }
 
 .weather-temperature {
-  margin-left: 62px;
+  margin-left: 30px;
 }
 
 .weather-temperature strong {
@@ -71,4 +71,10 @@ li::first-letter {
 
 .current-button {
   font-size: 10px;
+}
+
+.loader {
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
 }

@@ -1,76 +1,100 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./weather.css";
 
-export default function Weather() {
-  return (
-    <div className="Weather">
-      <form className="mb-3 search-form">
-        <div className="row">
-          <div className="col-6">
-            <input
-              type="search"
-              placeholder="Start here ..."
-              className="form-control city-input"
-              autoFocus="off"
-              autoComplete="off"
-            />
-          </div>
-          <div className="col-2">
-            <input
-              type="submit"
-              value="Search"
-              className="btn btn-outline-light search-button"
-            />
-          </div>
-        </div>
-      </form>
-      <div className="overview">
-        <div className="row">
-          <div className="col-6">
-            <h1 className="city">Cincinnati</h1>
-          </div>
-          <div className="col-6">
-            <p className="date">Wednesday 11:11</p>
-          </div>
-        </div>
-      </div>
+export default function Weather(props) {
+  const [weatherData, setweatherData] = useState({ ready: false });
+  function handleResponse(response) {
+    setweatherData({
+      ready: true,
+      city: response.data.name,
+      date: "Wednesday 11:11",
+      temperature: response.data.main.temp,
+      icon: "https://openweathermap.org/img/wn/10n@2x.png",
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+    });
+  }
 
-      <div className="row">
-        <div className="col-6">
-          <div className="clearfix weather-temperature">
-            <img
-              src="https://openweathermap.org/img/wn/10d@2x.png"
-              alt=""
-              className="float-left icon"
-            />
-            <strong>66</strong>
-            <span className="units">
-              <a href="/" className="fahrenheit">
-                °F
-              </a>{" "}
-              |
-              <a href="/" className="celsius">
-                °C
-              </a>
-            </span>
+  if (weatherData.ready) {
+    return (
+      <div className="Weather">
+        <form className="mb-3 search-form">
+          <div className="row">
+            <div className="col-6">
+              <input
+                type="search"
+                placeholder="Start here ..."
+                className="form-control city-input"
+                autoFocus="off"
+                autoComplete="off"
+              />
+            </div>
+            <div className="col-2">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-outline-light search-button"
+              />
+            </div>
+          </div>
+        </form>
+        <div className="overview">
+          <div className="row">
+            <div className="col-6">
+              <h1 className="city">{weatherData.city}</h1>
+            </div>
+            <div className="col-6">
+              <p className="date">{weatherData.date}</p>
+            </div>
           </div>
         </div>
-        <div className="col-6">
-          <ul className="conditions">
-            <li>broken clouds</li>
-            <li>Humidity: 77%</li>
-            <li>Wind: 11 mph</li>
-          </ul>
+
+        <div className="row">
+          <div className="col-6">
+            <div className="clearfix weather-temperature">
+              <img
+                src={weatherData.icon}
+                alt={weatherData.description}
+                className="float-left icon"
+              />
+              <strong>{Math.round(weatherData.temperature)}</strong>
+              <span className="units">
+                <a href="/" className="fahrenheit">
+                  °F
+                </a>{" "}
+                |
+                <a href="/" className="celsius">
+                  °C
+                </a>
+              </span>
+            </div>
+          </div>
+          <div className="col-6">
+            <ul className="conditions">
+              <li>{weatherData.description}</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {Math.round(weatherData.wind)} mph</li>
+            </ul>
+          </div>
+        </div>
+        <div className="location">
+          <p>
+            <button className="btn btn-outline-light current-button">
+              Click here
+            </button>{" "}
+            to see the weather at your current location
+          </p>
         </div>
       </div>
-      <div className="location">
-        <p>
-          <button className="btn btn-outline-light current-button">
-            Click here
-          </button>{" "}
-          to see the weather for your current location
-        </p>
-      </div>
-    </div>
-  );
+    );
+  } else {
+    const apiKey = "db51b5a53faf37133eab9327ddad8802";
+    let city = "Cincinnati";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return <div className="loader">Loading...</div>;
+  }
 }
