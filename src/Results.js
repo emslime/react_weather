@@ -1,5 +1,6 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import Temperature from "./Temperature";
 
 export default function Results(props) {
   return (
@@ -19,22 +20,15 @@ export default function Results(props) {
 
       <div className="row">
         <div className="col-6">
-          <div className="clearfix weather-temperature">
-            <img
-              src={props.data.icon}
-              alt={props.data.description}
-              className="float-left icon"
-            />
-            <strong>{Math.round(props.data.temperature)}</strong>
-            <span className="units">
-              <a href="/" className="fahrenheit">
-                °F
-              </a>{" "}
-              |
-              <a href="/" className="celsius">
-                °C
-              </a>
-            </span>
+          <div className="clearfix">
+            <div className="weather-temperature float-left">
+              <img
+                src={props.data.icon}
+                alt={props.data.description}
+                className="icon"
+              />
+              <Temperature imperial={Math.round(props.data.temperature)} />
+            </div>
           </div>
         </div>
         <div className="col-6">
