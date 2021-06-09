@@ -1,0 +1,28 @@
+.Forecast {
+  margin-top: 8px;
+  margin-bottom: 11px;
+  text-align: center;
+}
+
+.Forecast-day {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.Forecast .icon {
+  width: 50px;
+  margin-top: 0px;
+}
+
+.Forecast-temps {
+  font-size: 10px;
+}
+
+.Forecast-max {
+  opacity: 0.8;
+}
+
+.Forecast-min {
+  opacity: 0.4;
+  margin-left: 5px;
+}
