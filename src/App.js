@@ -13,7 +13,6 @@ export default function App() {
           </div>
         </div>
         <p className="coded-by">
-          This is a work in progress,{" "}
           <a
             href="https://github.com/emslime/react_weather"
             className="git-link"
@@ -22,7 +21,14 @@ export default function App() {
           >
             open-source code here
           </a>{" "}
-          🤍 Em
+          <a
+            href="https://www.instagram.com/emslime/"
+            className="slime-link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            🤍 Em
+          </a>
         </p>
       </div>
     </div>

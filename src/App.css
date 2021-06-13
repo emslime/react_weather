@@ -38,7 +38,7 @@ body {
 }
 
 .coded-by {
-  color: #fff;
+  color: grey;
   display: block;
   text-align: right;
   font-size: 9px;
@@ -46,12 +46,13 @@ body {
   margin-bottom: -16px;
 }
 
-.git-link {
-  color: #fff;
+.git-link,
+.slime-link {
+  color: grey;
   text-decoration: none;
 }
 
 .git-link:hover {
   cursor: pointer;
-  color: rgb(156, 116, 129);
+  color: #fff;
 }
